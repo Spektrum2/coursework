@@ -16,7 +16,7 @@ public class EmployeeService {
     }
 
     public static void printEmployeeMinSalary(Employee[] employees) {
-        int minSalary = 100000;
+        int minSalary = 1_000_001;
         for (Employee employee : employees) {
             if (employee.getSalary() < minSalary) {
                 minSalary = employee.getSalary();

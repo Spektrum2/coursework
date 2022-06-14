@@ -37,10 +37,10 @@ public class Employee {
     }
 
     public void setSalary(int salary) {
-        if (salary >= 0) {
+        if (salary >= 0 && salary <= 1_000_000) {
             this.salary = salary;
         } else {
-            throw new IllegalArgumentException("Зарпалта не может быть отрицательным числом!");
+            throw new IllegalArgumentException("Зарпалта не может быть отрицательным числом или больше 1_000_000");
         }
 
     }
