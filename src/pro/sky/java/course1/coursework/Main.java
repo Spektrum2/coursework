@@ -13,7 +13,7 @@ public class Main {
         employees[7] = new Employee("Федоров Дмитрий Константинович", 3, 40_000);
         employees[8] = new Employee("Гаврилов Георгий Даниилович", 2, 35_000);
         employees[9] = new Employee("Яковлева Мадина Марсельевна", 1, 90_000);
-        task6(employees);
+        task5(employees);
 
     }
 
