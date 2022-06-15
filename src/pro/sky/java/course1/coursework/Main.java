@@ -14,7 +14,6 @@ public class Main {
         employees[8] = new Employee("Гаврилов Георгий Даниилович", 2, 35_000);
         employees[9] = new Employee("Яковлева Мадина Марсельевна", 1, 90_000);
         task5(employees);
-
     }
 
     private static void printEmployee(Employee[] employees) {
@@ -64,7 +63,6 @@ public class Main {
             System.out.println(employee.getFio());
         }
     }
-
 
     private static void task1(Employee[] employees) {
         printEmployee(employees);
