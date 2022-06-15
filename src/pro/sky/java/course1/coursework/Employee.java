@@ -7,13 +7,14 @@ public class Employee {
     private String fio;
     private int department;
     private int salary;
-    static int id;
+    private int id;
+    private static int idSequence ;
 
     public Employee(String fio, int department, int salary) {
         this.fio = fio;
         this.department = department;
         this.salary = salary;
-        id++;
+        this.id = ++idSequence;
     }
 
     public String getFio() {
@@ -44,24 +45,15 @@ public class Employee {
         }
 
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return Objects.equals(fio, employee.fio);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(fio);
+    public int getId() {
+        return id;
     }
 
     @Override
     public String toString() {
         return "{" +
-                "Ф.И.О. = " + fio +
+                "id = " + id +
+                ", Ф.И.О. = " + fio +
                 ", Отдел = " + department +
                 ", Зарплата = " + salary +
                 '}';

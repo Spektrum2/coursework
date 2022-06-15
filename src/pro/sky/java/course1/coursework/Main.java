@@ -13,33 +13,83 @@ public class Main {
         employees[7] = new Employee("Федоров Дмитрий Константинович", 3, 40_000);
         employees[8] = new Employee("Гаврилов Георгий Даниилович", 2, 35_000);
         employees[9] = new Employee("Яковлева Мадина Марсельевна", 1, 90_000);
-        task4(employees);
+        task6(employees);
+
     }
 
+    private static void printEmployee(Employee[] employees) {
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
+    }
+
+    private static int calculateAmountEmployee(Employee[] employees) {
+        int amount = 0;
+        for (Employee employee : employees) {
+            amount += employee.getSalary();
+        }
+        return amount;
+    }
+
+    private static void printEmployeeMinSalary(Employee[] employees) {
+        int minSalary = 1_000_001;
+        Employee minEmployee = null;
+        for (Employee employee : employees) {
+            if (employee.getSalary() < minSalary) {
+                minSalary = employee.getSalary();
+                minEmployee = employee;
+            }
+        }
+        System.out.println("Сотрудник с минимальной зарплатой " + minEmployee);
+    }
+
+    private static void printEmployeeMaxSalary(Employee[] employees) {
+        int maxSalary = -1;
+        Employee maxEmployee = null;
+        for (Employee employee : employees) {
+            if (employee.getSalary() > maxSalary) {
+                maxSalary = employee.getSalary();
+                maxEmployee = employee;
+            }
+        }
+        System.out.println("Сотрудник с максимальной зарплатой " + maxEmployee);
+    }
+
+    private static double calculateAverageSalary(Employee[] employees, double amount) {
+        return amount / employees.length;
+    }
+
+    public static void printEmployeeFio(Employee[] employees) {
+        for (Employee employee : employees) {
+            System.out.println(employee.getFio());
+        }
+    }
+
+
     private static void task1(Employee[] employees) {
-        EmployeeService.printEmployee(employees);
+        printEmployee(employees);
     }
 
     private static void task2(Employee[] employees) {
-        int amount = EmployeeService.calculateAmountEmployee(employees);
-        System.out.println(amount);
+        int amount = calculateAmountEmployee(employees);
+        System.out.println("Сумма затрат на зарплаты в месяц " + amount);
     }
 
     private static void task3(Employee[] employees) {
-        EmployeeService.printEmployeeMinSalary(employees);
+        printEmployeeMinSalary(employees);
     }
 
     private static void task4(Employee[] employees) {
-        EmployeeService.printEmployeeMaxSalary(employees);
+        printEmployeeMaxSalary(employees);
     }
 
     private static void task5(Employee[] employees) {
-        int amount = EmployeeService.calculateAmountEmployee(employees);
-        int average = EmployeeService.calculateAverageSalary(amount);
-        System.out.println(average);
+        int amount = calculateAmountEmployee(employees);
+        double average = calculateAverageSalary(employees, amount);
+        System.out.println("Среднее значение зарплат " + average);
     }
 
     private static void task6(Employee[] employees) {
-        EmployeeService.printEmployeeFio(employees);
+        printEmployeeFio(employees);
     }
 }
