@@ -137,7 +137,6 @@ public class Main {
     }
 
     private static void indexingSalaryEmployee(Employee[] employees1) {
-        int size = 0;
         for (Employee employee : employees1) {
             for (Employee employee1 : employees) {
                 if (employee.equals(employee1)) {
