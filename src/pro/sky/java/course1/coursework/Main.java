@@ -14,10 +14,7 @@ public class Main {
         employees[7] = new Employee("Федоров Дмитрий Константинович", 3, 40_000);
         employees[8] = new Employee("Гаврилов Георгий Даниилович", 2, 35_000);
         employees[9] = new Employee("Яковлева Мадина Марсельевна", 1, 90_000);
-        task1();
-        task8();
-        task1();
-
+       task8();
     }
 
     private static void printEmployee() {
@@ -181,17 +178,18 @@ public class Main {
     }
 
     private static void task8() {
-        int department = 4;
+        int department = 5;
         double percent = 20;
         Employee[] employeesDepartment = searchByDepartment(department);
         int count = employeesDepartment.length;
         printEmployeeMinSalary(employeesDepartment);
         printEmployeeMaxSalary(employeesDepartment);
         int amount = calculateAmountEmployee(employeesDepartment);
-        System.out.println("Сумма затрат на зарплаты в месяц " + amount);
+        System.out.println("Сумма затрат на зарплаты в мецяс в " + department + "-м отделе " + amount);
         double average = calculateAverageSalary(employeesDepartment, count);
-        System.out.println("Среднее значение зарплат " + average);
+        System.out.println("Среднее значение зарпалат в " + department + "-м отделе " + average);
         indexingSalaryEmployee(employeesDepartment, percent);
+        System.out.println("Сотрудники " + department + "-го отдела:");
         printIdEmployeeFioSalary(employeesDepartment);
     }
 
@@ -199,9 +197,10 @@ public class Main {
         int number = 45_000;
         Employee[] lessSalary = compareLessSalary(number);
         Employee[] moreSalary = compareMoreSalary(number);
-        System.out.println("Сотрудники с зарплатой меньше " + number);
+        System.out.println("Сотрудники с зарплатой меньше " + number + ":");
         printIdEmployeeFioSalary(lessSalary);
-        System.out.println("Сотрудники с зарплатой больше (или равно) " + number);
+        System.out.println();
+        System.out.println("Сотрудники с зарплатой больше (или равно) " + number + ":");
         printIdEmployeeFioSalary(moreSalary);
     }
 }
