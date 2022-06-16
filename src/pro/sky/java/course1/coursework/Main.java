@@ -136,8 +136,10 @@ public class Main {
         return moreSalary;
     }
 
-    private static void indexingSalaryEmployee(Employee[] employees1) {
+    private static void indexingSalaryEmployee(Employee[] employees1, double percent) {
         for (Employee employee : employees1) {
+            double indexing = employee.getSalary() + employee.getSalary() * (percent / 100);
+            employee.setSalary((int) indexing);
             for (Employee employee1 : employees) {
                 if (employee.equals(employee1)) {
                     employee1.setSalary(employee.getSalary());
@@ -179,7 +181,7 @@ public class Main {
     }
 
     private static void task8() {
-        int department = 1;
+        int department = 4;
         double percent = 20;
         Employee[] employeesDepartment = searchByDepartment(department);
         int count = employeesDepartment.length;
@@ -189,8 +191,7 @@ public class Main {
         System.out.println("Сумма затрат на зарплаты в месяц " + amount);
         double average = calculateAverageSalary(employeesDepartment, count);
         System.out.println("Среднее значение зарплат " + average);
-        indexingSalary(employeesDepartment, percent);
-        indexingSalaryEmployee(employeesDepartment);
+        indexingSalaryEmployee(employeesDepartment, percent);
         printIdEmployeeFioSalary(employeesDepartment);
     }
 
