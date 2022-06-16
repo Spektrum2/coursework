@@ -55,9 +55,9 @@ public class Main {
         System.out.println("Сотрудник с максимальной зарплатой " + maxEmployee);
     }
 
-    private static double calculateAverageSalary(Employee[] employees, int count) {
+    private static double calculateAverageSalary(Employee[] employees, int volume) {
         double amount = calculateAmountEmployee(employees);
-        return amount / count;
+        return amount / volume;
     }
 
     private static void printEmployeeFio() {
@@ -133,7 +133,7 @@ public class Main {
         return moreSalary;
     }
 
-    private static void indexingSalaryEmployee(Employee[] employees1, double percent) {
+    private static void indexingSalaryDepartment(Employee[] employees1, double percent) {
         for (Employee employee : employees1) {
             double indexing = employee.getSalary() + employee.getSalary() * (percent / 100);
             employee.setSalary((int) indexing);
@@ -163,8 +163,8 @@ public class Main {
     }
 
     private static void task5() {
-        int count = employees.length;
-        double average = calculateAverageSalary(employees, count);
+        int volume = employees.length;
+        double average = calculateAverageSalary(employees, volume);
         System.out.println("Среднее значение зарплат " + average);
     }
 
@@ -181,7 +181,7 @@ public class Main {
         int department = 5;
         double percent = 20;
         Employee[] employeesDepartment = searchByDepartment(department);
-        int count = employeesDepartment.length;
+        int volume = employeesDepartment.length;
         System.out.println("Сотрудники " + department + "-го отдела с минимальной и максимальной зарплатой:");
         printEmployeeMinSalary(employeesDepartment);
         printEmployeeMaxSalary(employeesDepartment);
@@ -189,9 +189,9 @@ public class Main {
         int amount = calculateAmountEmployee(employeesDepartment);
         System.out.println("Сумма затрат на зарплаты в мецяс в " + department + "-м отделе " + amount);
         System.out.println();
-        double average = calculateAverageSalary(employeesDepartment, count);
+        double average = calculateAverageSalary(employeesDepartment, volume);
         System.out.println("Среднее значение зарпалат в " + department + "-м отделе " + average);
-        indexingSalaryEmployee(employeesDepartment, percent);
+        indexingSalaryDepartment(employeesDepartment, percent);
         System.out.println();
         System.out.println("Сотрудники " + department + "-го отдела:");
         printIdEmployeeFioSalary(employeesDepartment);
