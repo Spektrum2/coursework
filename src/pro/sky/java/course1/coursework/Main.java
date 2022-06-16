@@ -72,7 +72,7 @@ public class Main {
         }
     }
 
-    private static void indexingSalary(Employee[] employees, double percent) {
+    private static void indexingSalary(double percent) {
         for (Employee employee : employees) {
             double indexing = employee.getSalary() + employee.getSalary() * (percent / 100);
             employee.setSalary((int) indexing);
@@ -174,7 +174,7 @@ public class Main {
 
     private static void task7() {
         double percent = 15;
-        indexingSalary(employees, percent);
+        indexingSalary(percent);
     }
 
     private static void task8() {
