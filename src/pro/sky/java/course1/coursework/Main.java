@@ -14,7 +14,10 @@ public class Main {
         employees[7] = new Employee("Федоров Дмитрий Константинович", 3, 40_000);
         employees[8] = new Employee("Гаврилов Георгий Даниилович", 2, 35_000);
         employees[9] = new Employee("Яковлева Мадина Марсельевна", 1, 90_000);
-        task9();
+        task1();
+        task8();
+        task1();
+
     }
 
     private static void printEmployee() {
@@ -133,6 +136,20 @@ public class Main {
         return moreSalary;
     }
 
+    private static void indexingSalaryEmployee(Employee[] employees1) {
+        int size = 0;
+        for (Employee employee : employees1) {
+            for (Employee employee1 : employees) {
+                if (employee.equals(employee1)) {
+                    employee1.setSalary(employee.getSalary());
+                }
+            }
+
+
+        }
+
+
+        }
     private static void task1() {
         printEmployee();
     }
@@ -166,7 +183,7 @@ public class Main {
     }
 
     private static void task8() {
-        int department = 4;
+        int department = 1;
         double percent = 20;
         Employee[] employeesDepartment = searchByDepartment(department);
         int count = employeesDepartment.length;
@@ -177,6 +194,7 @@ public class Main {
         double average = calculateAverageSalary(employeesDepartment, count);
         System.out.println("Среднее значение зарплат " + average);
         indexingSalary(employeesDepartment, percent);
+        indexingSalaryEmployee(employeesDepartment);
         printIdEmployeeFioSalary(employeesDepartment);
     }
 
