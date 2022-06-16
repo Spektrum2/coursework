@@ -182,13 +182,17 @@ public class Main {
         double percent = 20;
         Employee[] employeesDepartment = searchByDepartment(department);
         int count = employeesDepartment.length;
+        System.out.println("Сотрудники " + department + "-го отдела с минимальной и максимальной зарплатой:");
         printEmployeeMinSalary(employeesDepartment);
         printEmployeeMaxSalary(employeesDepartment);
+        System.out.println();
         int amount = calculateAmountEmployee(employeesDepartment);
         System.out.println("Сумма затрат на зарплаты в мецяс в " + department + "-м отделе " + amount);
+        System.out.println();
         double average = calculateAverageSalary(employeesDepartment, count);
         System.out.println("Среднее значение зарпалат в " + department + "-м отделе " + average);
         indexingSalaryEmployee(employeesDepartment, percent);
+        System.out.println();
         System.out.println("Сотрудники " + department + "-го отдела:");
         printIdEmployeeFioSalary(employeesDepartment);
     }
