@@ -6,11 +6,11 @@ public class Employee {
 
     private String fio;
     private int department;
-    private int salary;
+    private double salary;
     private int id;
     private static int idSequence = 0;
 
-    public Employee(String fio, int department, int salary) {
+    public Employee(String fio, int department, double salary) {
         this.fio = fio;
         this.department = department;
         this.salary = salary;
@@ -33,11 +33,11 @@ public class Employee {
         }
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         if (salary >= 0 && salary <= 1_000_000) {
             this.salary = salary;
         } else {

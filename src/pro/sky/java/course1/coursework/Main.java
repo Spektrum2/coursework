@@ -14,7 +14,8 @@ public class Main {
         employees[7] = new Employee("Федоров Дмитрий Константинович", 3, 40_000);
         employees[8] = new Employee("Гаврилов Георгий Даниилович", 2, 35_000);
         employees[9] = new Employee("Яковлева Мадина Марсельевна", 1, 90_000);
-       task8();
+       task9();
+
     }
 
     private static void printEmployee() {
@@ -23,8 +24,8 @@ public class Main {
         }
     }
 
-    private static int calculateAmountEmployee(Employee[] employees) {
-        int amount = 0;
+    private static double calculateAmountEmployee(Employee[] employees) {
+        double amount = 0;
         for (Employee employee : employees) {
             amount += employee.getSalary();
         }
@@ -32,7 +33,7 @@ public class Main {
     }
 
     private static void printEmployeeMinSalary(Employee[] employees) {
-        int minSalary = 1_000_001;
+        double minSalary = 1_000_001;
         Employee minEmployee = null;
         for (Employee employee : employees) {
             if (employee.getSalary() < minSalary) {
@@ -44,7 +45,7 @@ public class Main {
     }
 
     private static void printEmployeeMaxSalary(Employee[] employees) {
-        int maxSalary = -1;
+        double maxSalary = -1;
         Employee maxEmployee = null;
         for (Employee employee : employees) {
             if (employee.getSalary() > maxSalary) {
@@ -75,7 +76,7 @@ public class Main {
     private static void indexingSalary(double percent) {
         for (Employee employee : employees) {
             double indexing = employee.getSalary() + employee.getSalary() * (percent / 100);
-            employee.setSalary((int) indexing);
+            employee.setSalary(indexing);
         }
     }
 
@@ -136,7 +137,7 @@ public class Main {
     private static void indexingSalaryDepartment(Employee[] employees1, double percent) {
         for (Employee employee : employees1) {
             double indexing = employee.getSalary() + employee.getSalary() * (percent / 100);
-            employee.setSalary((int) indexing);
+            employee.setSalary(indexing);
             for (Employee employee1 : employees) {
                 if (employee.equals(employee1)) {
                     employee1.setSalary(employee.getSalary());
@@ -150,7 +151,7 @@ public class Main {
     }
 
     private static void task2() {
-        int amount = calculateAmountEmployee(employees);
+        double amount = calculateAmountEmployee(employees);
         System.out.println("Сумма затрат на зарплаты в месяц " + amount);
     }
 
@@ -186,7 +187,7 @@ public class Main {
         printEmployeeMinSalary(employeesDepartment);
         printEmployeeMaxSalary(employeesDepartment);
         System.out.println();
-        int amount = calculateAmountEmployee(employeesDepartment);
+        double amount = calculateAmountEmployee(employeesDepartment);
         System.out.println("Сумма затрат на зарплаты в мецяс в " + department + "-м отделе " + amount);
         System.out.println();
         double average = calculateAverageSalary(employeesDepartment, volume);
