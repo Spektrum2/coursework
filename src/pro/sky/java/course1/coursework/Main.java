@@ -144,12 +144,9 @@ public class Main {
                     employee1.setSalary(employee.getSalary());
                 }
             }
-
-
         }
+    }
 
-
-        }
     private static void task1() {
         printEmployee();
     }
