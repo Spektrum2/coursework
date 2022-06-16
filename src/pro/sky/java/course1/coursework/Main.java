@@ -15,7 +15,6 @@ public class Main {
         employees[8] = new Employee("Гаврилов Георгий Даниилович", 2, 35_000);
         employees[9] = new Employee("Яковлева Мадина Марсельевна", 1, 90_000);
         task9();
-
     }
 
     private static void printEmployee() {
@@ -179,7 +178,6 @@ public class Main {
         System.out.println("Среднее значение зарплат " + average);
         indexingSalary(employeesDepartment, percent);
         printIdEmployeeFioSalary(employeesDepartment);
-
     }
 
     private static void task9() {
