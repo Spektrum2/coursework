@@ -29,6 +29,7 @@ public class EmployeeBook {
                 }
                 size--;
                 System.out.println("Сотрудник с " + id + " удален");
+                return;
             }
         }
     }
