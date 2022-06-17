@@ -23,12 +23,10 @@ public class EmployeeBook {
     public void removeEmployee(int id) {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getId() == id) {
-                employees[i] = null;
-                if (i != employees.length - 1) {
-                    System.arraycopy(employees, i + 1, employees, i, size - 1);
-                }
+                System.arraycopy(employees, i + 1, employees, i, size - i - 1);
+                employees[size - 1] = null;
                 size--;
-                System.out.println("Сотрудник с " + id + " удален");
+                System.out.println("Сотрудник с id " + id + " удален");
                 return;
             }
         }

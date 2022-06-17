@@ -14,7 +14,9 @@ public class Main {
         employeeBook.addEmployee("Федоров Дмитрий Константинович", 3, 40_000);
         employeeBook.addEmployee("Гаврилов Георгий Даниилович", 2, 35_000);
         employeeBook.addEmployee("Яковлева Мадина Марсельевна", 1, 90_000);
-        employeeBook.removeEmployee(2);
+        employeeBook.removeEmployee(6);
+        task1();
+
     }
 
     private static void task1() {
