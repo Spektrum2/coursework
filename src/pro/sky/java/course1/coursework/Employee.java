@@ -26,7 +26,7 @@ public class Employee {
     }
 
     public void setDepartment(int department) {
-        if (department > 0 && department < 5) {
+        if (department > 0 && department <= 5) {
             this.department = department;
         } else {
             throw new IllegalArgumentException("Неправильно указан номер отдела. Укажите номер отдела от 1 до 5!");
