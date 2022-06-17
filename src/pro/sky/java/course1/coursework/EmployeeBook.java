@@ -14,7 +14,7 @@ public class EmployeeBook {
 
     public void addEmployee(String fio, int department, double salary) {
         if (size >= employees.length) {
-            throw new IllegalArgumentException("Список сотрудников заполнен. Добавление нового контакта ограничено.");
+            throw new IllegalArgumentException("Список сотрудников заполнен. Добавление нового сотрудника ограничено.");
         }
         Employee newEmployee = new Employee(fio, department, salary);
         employees[size++] = newEmployee;
