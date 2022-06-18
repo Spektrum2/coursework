@@ -38,10 +38,10 @@ public class Employee {
     }
 
     public void setSalary(double salary) {
-        if (salary >= 0 && salary <= 1_000_000) {
+        if (salary >= 0) {
             this.salary = salary;
         } else {
-            throw new IllegalArgumentException("Зарпалта не может быть отрицательным числом или больше 1_000_000");
+            throw new IllegalArgumentException("Зарпалта не может быть отрицательным числом");
         }
 
     }
