@@ -3,7 +3,6 @@ package pro.sky.java.course1.coursework;
 public class EmployeeBook {
     private final Employee[] employees;
     private int size;
-    private int id;
 
     public EmployeeBook() {
         this.employees = new Employee[10];
@@ -29,11 +28,6 @@ public class EmployeeBook {
                 System.arraycopy(employees, i + 1, employees, i, size - i - 1);
                 employees[size - 1] = null;
                 size--;
-                for (int j = 0; j < size; j++) {
-                    if (employees[j].getId() != j + 1) {
-                        employees[j].setId(j + 1, size);
-                    }
-                }
                 return;
             }
         }
