@@ -50,6 +50,13 @@ public class Employee {
         return id;
     }
 
+    public void setId(int id, int size) {
+        this.id = id;
+        if (size < idSequence) {
+            idSequence--;
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
