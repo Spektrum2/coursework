@@ -8,10 +8,6 @@ public class EmployeeBook {
         this.employees = new Employee[10];
     }
 
-    public Employee[] getEmployees() {
-        return this.employees;
-    }
-
     public void addEmployee(String fio, int department, double salary) {
         if (size >= employees.length) {
             throw new IllegalArgumentException("Список сотрудников заполнен. Добавление нового сотрудника ограничено.");
@@ -67,7 +63,14 @@ public class EmployeeBook {
         }
     }
 
-    public double calculateAmountEmployee(Employee[] employees) {
+    public double calculateAmountEmployee() {
+        double amount = 0;
+        for (Employee employee : employees) {
+            amount += employee.getSalary();
+        }
+        return amount;
+    }
+    public double calculateAmountEmployeeDepartment(Employee[] employees) {
         double amount = 0;
         for (Employee employee : employees) {
             amount += employee.getSalary();
@@ -75,7 +78,18 @@ public class EmployeeBook {
         return amount;
     }
 
-    public void printEmployeeMinSalary(Employee[] employees) {
+    public void printEmployeeMinSalary() {
+        double minSalary = 1_000_001;
+        Employee minEmployee = null;
+        for (Employee employee : employees) {
+            if (employee.getSalary() < minSalary) {
+                minSalary = employee.getSalary();
+                minEmployee = employee;
+            }
+        }
+        System.out.println("Сотрудник с минимальной зарплатой " + minEmployee);
+    }
+    public void printEmployeeMinSalaryDepartment(Employee[] employees) {
         double minSalary = 1_000_001;
         Employee minEmployee = null;
         for (Employee employee : employees) {
@@ -87,7 +101,18 @@ public class EmployeeBook {
         System.out.println("Сотрудник с минимальной зарплатой " + minEmployee);
     }
 
-    public void printEmployeeMaxSalary(Employee[] employees) {
+    public void printEmployeeMaxSalary() {
+        double maxSalary = -1;
+        Employee maxEmployee = null;
+        for (Employee employee : employees) {
+            if (employee.getSalary() > maxSalary) {
+                maxSalary = employee.getSalary();
+                maxEmployee = employee;
+            }
+        }
+        System.out.println("Сотрудник с максимальной зарплатой " + maxEmployee);
+    }
+    public void printEmployeeMaxSalaryDepartment(Employee[] employees) {
         double maxSalary = -1;
         Employee maxEmployee = null;
         for (Employee employee : employees) {
@@ -99,10 +124,15 @@ public class EmployeeBook {
         System.out.println("Сотрудник с максимальной зарплатой " + maxEmployee);
     }
 
-    public double calculateAverageSalary(Employee[] employees, int volume) {
-        double amount = calculateAmountEmployee(employees);
-        return amount / volume;
+    public double calculateAverageSalary() {
+        double amount = calculateAmountEmployee();
+        return amount / employees.length;
     }
+    public double calculateAverageSalaryDepartment(Employee[] employees) {
+        double amount = calculateAmountEmployee();
+        return amount / employees.length;
+    }
+
 
     public void printEmployeeFio() {
         for (Employee employee : employees) {
@@ -185,5 +215,11 @@ public class EmployeeBook {
                 }
             }
         }
-
+    public void printDepartment(int department) {
+        for (Employee employee : employees) {
+            if (employee.getDepartment() == department) {
+                System.out.println("id = " + employee.getId() + ", Ф.И.О. = " + employee.getFio() + ", Зарпалата = " + employee.getSalary());
+            }
+        }
+    }
 }

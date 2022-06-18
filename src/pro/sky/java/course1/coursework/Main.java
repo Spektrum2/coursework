@@ -14,8 +14,7 @@ public class Main {
         employeeBook.addEmployee("Федоров Дмитрий Константинович", 3, 40_000);
         employeeBook.addEmployee("Гаврилов Георгий Даниилович", 2, 35_000);
         employeeBook.addEmployee("Яковлева Мадина Марсельевна", 1, 90_000);
-        task8();
-        task1();
+        task3();
     }
 
     private static void task1() {
@@ -23,21 +22,20 @@ public class Main {
     }
 
     private static void task2() {
-        double amount = employeeBook.calculateAmountEmployee(employeeBook.getEmployees());
+        double amount = employeeBook.calculateAmountEmployee();
         System.out.println("Сумма затрат на зарплаты в месяц " + amount);
     }
 
     private static void task3() {
-        employeeBook.printEmployeeMinSalary(employeeBook.getEmployees());
+        employeeBook.printEmployeeMinSalary();
     }
 
     private static void task4() {
-        employeeBook.printEmployeeMaxSalary(employeeBook.getEmployees());
+        employeeBook.printEmployeeMaxSalary();
     }
 
     private static void task5() {
-        int volume = employeeBook.getEmployees().length;
-        double average = employeeBook.calculateAverageSalary(employeeBook.getEmployees(), volume);
+        double average = employeeBook.calculateAverageSalary();
         System.out.println("Среднее значение зарплат " + average);
     }
 
@@ -54,20 +52,19 @@ public class Main {
         int department = 5;
         double percent = 20;
         Employee[] employeesDepartment = employeeBook.searchByDepartment(department);
-        int volume = employeesDepartment.length;
         System.out.println("Сотрудники " + department + "-го отдела с минимальной и максимальной зарплатой:");
-        employeeBook.printEmployeeMinSalary(employeesDepartment);
-        employeeBook.printEmployeeMaxSalary(employeesDepartment);
+        employeeBook.printEmployeeMinSalaryDepartment(employeesDepartment);
+        employeeBook.printEmployeeMaxSalaryDepartment(employeesDepartment);
         System.out.println();
-        double amount = employeeBook.calculateAmountEmployee(employeesDepartment);
+        double amount = employeeBook.calculateAmountEmployeeDepartment(employeesDepartment);
         System.out.println("Сумма затрат на зарплаты в мецяс в " + department + "-м отделе " + amount);
         System.out.println();
-        double average = employeeBook.calculateAverageSalary(employeesDepartment, volume);
+        double average = employeeBook.calculateAverageSalaryDepartment(employeesDepartment);
         System.out.println("Среднее значение зарпалат в " + department + "-м отделе " + average);
         employeeBook.indexingSalaryDepartment(department, percent);
         System.out.println();
         System.out.println("Сотрудники " + department + "-го отдела:");
-        employeeBook.printIdEmployeeFioSalary(employeesDepartment);
+        employeeBook.printDepartment(department);
     }
 
     private static void task9() {
