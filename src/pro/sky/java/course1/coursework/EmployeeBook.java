@@ -182,7 +182,6 @@ public class EmployeeBook {
             if(employee.getDepartment() == department){
             double indexing = employee.getSalary() + employee.getSalary() * (percent / 100);
             employee.setSalary(indexing);
-
                 }
             }
         }
