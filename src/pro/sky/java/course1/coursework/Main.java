@@ -14,6 +14,7 @@ public class Main {
         employeeBook.addEmployee("Федоров Дмитрий Константинович", 3, 40_000);
         employeeBook.addEmployee("Гаврилов Георгий Даниилович", 2, 35_000);
         employeeBook.addEmployee("Яковлева Мадина Марсельевна", 1, 90_000);
+        task8();
         task1();
     }
 
@@ -63,7 +64,7 @@ public class Main {
         System.out.println();
         double average = employeeBook.calculateAverageSalary(employeesDepartment, volume);
         System.out.println("Среднее значение зарпалат в " + department + "-м отделе " + average);
-        employeeBook.indexingSalaryDepartment(employeesDepartment, percent);
+        employeeBook.indexingSalaryDepartment(department, percent);
         System.out.println();
         System.out.println("Сотрудники " + department + "-го отдела:");
         employeeBook.printIdEmployeeFioSalary(employeesDepartment);

@@ -177,16 +177,14 @@ public class EmployeeBook {
         return moreSalary;
     }
 
-    public void indexingSalaryDepartment(Employee[] employees1, double percent) {
-        for (Employee employee : employees1) {
+    public void indexingSalaryDepartment(int department, double percent) {
+        for (Employee employee : employees) {
+            if(employee.getDepartment() == department){
             double indexing = employee.getSalary() + employee.getSalary() * (percent / 100);
             employee.setSalary(indexing);
-            for (Employee employee1 : employees) {
-                if (employee.equals(employee1)) {
-                    employee1.setSalary(employee.getSalary());
+
                 }
             }
         }
-    }
 
 }
